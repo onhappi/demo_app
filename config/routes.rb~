@@ -1,10 +1,11 @@
 DemoApp::Application.routes.draw do
-  get "pages/home"
-
-  get "pages/contact"
-
-  get "pages/about"
-
+  #get "pages/home"
+    math '/contact', :to=> 'pages#contact'
+  #get "pages/contact"
+    math '/about', :to=> 'pages#about'
+  #get "pages/about"
+    math '/help', :to => 'pages#help'  
+    root :to =>'pages#home'
   resources :users
 
 

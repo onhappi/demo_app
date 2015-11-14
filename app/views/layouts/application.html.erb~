@@ -4,8 +4,12 @@
   <title>by onhappi - <%= @title %></title>
 </head>
 <body>
-
-<%= yield %>
-
+ <div class="container">
+  <%= render "layouts/header" %>
+  <section class="roud">
+    <%= yield %>
+  </section>
+ <%= render "layouts/footer" %>
+ <div>
 </body>
 </html>
