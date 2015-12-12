@@ -1,11 +1,15 @@
 <header>
  <% logo = image_tag("logo.png", :alt =>"Demo App",:class=>"round")%>
-  <%= link to logo,root_path %>
+  <%= link_to logo,root_path %>
   <nav class="round">
    <ul>
      <li><%=link_to "Home","#"%></li>
      <li><%=link_to "Help","#"%></li>
-     <li><%=link_to "Sign In","#"%></li>
+     <% if current_user.nil? %>
+     <li><%=link_to "Sign in", signin_path %></li>
+     <% else %>
+     <li><%=link_to "Sign out",signout_path, :method => :delete %></li>
+     <% end %> 
    </ul>
  </nav>
 </header>
